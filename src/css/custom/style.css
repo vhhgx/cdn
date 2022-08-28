@@ -1,0 +1,123 @@
+/* ## 常用html标签 */
+a { text-decoration: none; }
+* { margin: 0; padding: 0; }
+input { margin: 0px; border: 0px; background: #ffffff; padding: 7px 0px; border-radius: 5px; padding-left: 6px; }
+input:hover { background-color: #ffffff00; }
+input::-webkit-input-placeholder { color: #d8d8d8;  }
+
+
+/* 输入框和文本域相关 */
+
+/* WebKit浏览器 */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #C0C0C0;
+	font-size: 14px;
+}
+/* 火狐浏览器 4-18 */
+input:-moz-placeholder, textarea:-moz-placeholder {
+	opacity: 1;
+}
+/* 火狐浏览器 19+ */
+input::-moz-placeholder, textarea::-moz-placeholder {
+	opacity: 1;
+}
+/* IE浏览器 10+ */
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color: #C0C0C0;
+	font-size: 14px;
+}
+
+
+
+/*包含以下五种的链接*/
+a {
+  text-decoration: none;
+}
+/*正常的未被访问过的链接*/
+a:link {
+  text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+  text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+  text-decoration: none;
+}
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+  text-decoration: none;
+}
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+  text-decoration: none;
+}
+
+
+
+
+/* ## 组件 */
+
+/* ### 左侧菜单 */
+.nav { width: 200px; background: #009688; margin: 20px; margin-right: 0; border-radius: 15px; padding: 20px; }
+.nav-item { padding: 6px 6px 6px 0; color: #ffffff; }
+.nav-item-icon { margin-right: 10px; color: #ffffff; }
+
+/* ### 右侧内容 */
+.con { display: flex; width: calc(100vw - 200px); justify-content: center; }
+
+.button { 
+  display: flex; justify-content: center; align-items: center; 
+  width: 100px; height: 30px; border-radius: 15px; 
+}
+.button-icons { margin-right: 4px; }
+
+.tag { 
+  display: flex; justify-content: center; align-items: center;
+  font-size: 12px; padding: 2px 8px; border-radius: 20px; margin-right: 10px; font-family: 'SourceHans';
+}
+.search { border-radius: 0; outline:none; padding-left: 0; color: #ffffff; width: 100%; }
+.search-button { border: 0; width: 32px; }
+.title { display: flex; justify-content: space-between; align-items: center; margin: 22px 0; }
+
+/* ## 字体 & 大小 */
+
+/* ### 字体，需要先引用字体文件和css */
+/* #### 瘦长英文*/
+.dinPro { font-family: 'DINPro'; }
+/* #### 汉字字体 */
+.lanting { font-family: 'LanTing';}
+.source { font-family: 'SourceHans'; }
+
+/* ### 字体大小 */
+.normal-size { font-size: 13px; }
+.display { font-size: 30px; }
+.title-size { font-size: 22px; font-weight: 700; }
+
+
+/* ## 色彩 */
+
+
+/* ### 背景色 */
+.white-bg { background-color: #ffffff; }
+/* #### 透明色 */
+.trans-bg { background-color: #ffffff00; }
+
+.teal-lighten-bg { background-color: #26a69a;}
+.teal-darken-bg { background-color: #00796b; }
+
+.orange-lighten-bg { background-color: #ffa726; }
+.cyan-lighten-bg { background-color: #26c6da; }
+
+/* ### 前景色 */
+.white { color: #ffffff;}
+.gray { color: #8d8d8d; }
+.gray-darken { color: #4f4f4f; }
+.teal-lighten { color: #26a69a; }
+.red-lighten { color: #ef5350; }
+
+
+
+/* ## 其他 */
+.hidden { display: none; }

@@ -1,0 +1,80 @@
+{
+  "rules": [{
+    "appCondition": {
+      "appUIDs": [{
+        "packageName": "com.taobao.taobao",
+        "user": 0
+      }, {
+        "packageName": "com.eg.android.AlipayGphone",
+        "user": 0
+      }, {
+        "packageName": "com.jingdong.app.mall",
+        "user": 0
+      }, {
+        "packageName": "com.sankuai.meituan",
+        "user": 0
+      }, {
+        "packageName": "com.xiaomi.smarthome",
+        "user": 0
+      }, {
+        "packageName": "com.netease.cloudmusic",
+        "user": 0
+      }, {
+        "packageName": "com.baidu.netdisk",
+        "user": 0
+      }, {
+        "packageName": "com.catchingnow.clipsync",
+        "user": 0
+      }, {
+        "packageName": "com.tencent.qqmusic",
+        "user": 0
+      }],
+      "type": 0
+    },
+    "chargeCondition": {
+      "type": 0
+    },
+    "description": "应用营销",
+    "disable": false,
+    "id": 2,
+    "screenCondition": {
+      "type": 0
+    },
+    "textCondition": {
+      "ignoreCase": true,
+      "strs": ["数据", "更新", "升级", "金币", "关注", "浏览", "现金", "提醒", "红包", "收到", "宝贝", "酒店", "活动", "邀请", "有奖", "福利", "免息", "好物", "火爆", "网红", "立即", "查看", "提问", "听点", "热搜", "首发", "推荐", "最高", "速抢", "锁定", "返现", "拼单", "你喜欢的", "预告", "疯抢", "发货", "签收", "派送", "中转", "待支付", "显示", "物流", "订单", "商品", "您的", "购买的", "奖励", "取件", "最低", "菜鸟裹裹", "双十一", "双11", "双12", "双十二", "12.12", "11.11", "美食", "专属", "抽奖", "今日", "荐书", "抢先", "上手", "交易", "曝光", "手慢", "抢光", "一笔", "换新", "亲爱", "加50块", "限时", "半价", "神价", "发车", "购物车", "卡券", "高价", "点击观看", "到家喽", "漂亮美眉", "对不😂", "去打个招呼吧", "新歌", "权益", "凭尾号", "折后", "你太牛🐂了！", "凭手机尾号", "建议及时删除", "猜你一定", "微信备份", "换机", "水滴", "小美果园", "砸中了", "内存", "倒计时", "永久", "无限", "空间", "激活", "公积金", "零门槛", "礼包", "新年礼", "0门槛", "csdn", "CSDN", "大金蛋", "来自其他设备的文本", "朋友，加", "鞋给我", "包邮回收", "免费鉴定", "关注提醒：", "微博", "速来围观", "芭芭农场", "肥料", "即将过期", "点我领取", "前领取", "上新", "自提点", "连续浇水", "免费水果", "订阅通知", "热卖中", "有优惠啦", "快来瞧瞧", "提前抢"],
+      "strs1": [],
+      "strs2": [],
+      "type": 1
+    },
+    "timeCondition": {
+      "end": 0,
+      "start": 0
+    },
+    "type": {
+      "delay_time": 0,
+      "extra_action": {
+        "actionNames": [],
+        "enabled": false
+      },
+      "force_mute": false,
+      "hide_template": {
+        "id": 2,
+        "message": "收到来自 {app} 的通知",
+        "title": "{app}"
+      },
+      "include_ongoing": false,
+      "later_time": 0,
+      "later_times": [0],
+      "sound_uri": "",
+      "type": 0,
+      "webhook": {
+        "method": 0
+      }
+    },
+    "weekCondition": {
+      "days": [1, 2, 3, 4, 5, 6, 7]
+    }
+  }],
+  "uid": "559F17-DA9146-DDE981"
+}
