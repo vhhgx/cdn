@@ -1,0 +1,20 @@
+{
+  "name": "cdn",
+  "version": "1.0.0",
+  "description": "一个乱七八糟的常用文件库，通过`https://cdn.jsdelivr.net/gh/cdn/`拼接文件路径的方式白嫖 [JSDELIVR](https://www.jsdelivr.com/) 提供的免费cdn",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vhhgx/cdn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vhhgx/cdn/issues"
+  },
+  "homepage": "https://github.com/vhhgx/cdn#readme"
+}
