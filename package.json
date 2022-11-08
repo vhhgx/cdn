@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/vhhgx/cdn/issues"
   },
-  "homepage": "https://github.com/vhhgx/cdn#readme"
+  "homepage": "https://github.com/vhhgx/cdn#readme",
+  "dependencies": {
+    "exceljs": "^4.3.0"
+  }
 }

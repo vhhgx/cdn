@@ -1,0 +1,10 @@
+let bcc = []
+for( let i = 0; i < c.length; i++) {
+  let b = c[i].getElementsByTagName('em')
+  if(Array.from(b)[0]) {
+      bcc.push(Array.from(b)[0].innerText) 
+  }
+}
+
+
+

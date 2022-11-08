@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Language" content="zh-cn"/>
+  <title>鼠标选中</title>
+  <script src="https://fastly.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app" @mousemove="swiping">
+    <div style="display: flex; " >
+      <div v-for="j in 72" @mousedown="pressed" @mouseup="released">
+        <div :ref="`${j}-${i}`" v-for="i in 36" class="item"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    firstCoord: {},
+    swipCoord: {}
+  },
+  // NOTE 关于区块的坐标，j为横坐标，i为纵坐标
+
+  methods: {
+    // NOTE 按下时
+    pressed(event) {
+
+      let curX = event.clientX
+      let curY = event.clientY
+
+      let x = this.getAxisCoord(curX, 24, 6, 3)
+      let y = this.getAxisCoord(curY, 24, 6, 6)
+      
+      if(x > -1 && y > -1) {
+        this.firstCoord.x = x
+        this.firstCoord.y = y
+      }
+    },
+
+    // NOTE 滑动时
+    swiping(event) {
+      this.isSwip = true
+
+      let curX = event.clientX
+      let curY = event.clientY
+
+      let x = this.getAxisCoord(curX, 24, 6, 3)
+      let y = this.getAxisCoord(curY, 24, 6, 6)
+
+      let fx = this.firstCoord.x
+      let fy = this.firstCoord.y
+
+      this.swipCoord.x = x
+      this.swipCoord.y = y
+      if(fx && fy) {
+        this.$refs[`${fx}-${fy}`][0].style['background-color'] = "#66ccff"
+      }
+      
+      for ( let i = fx; i < (Math.abs(x - fx)); i++) {
+        for ( let j = fy; j < (Math.abs(y - fy)); j++) {
+          this.$refs[`${i}-${j}`][0].style['background-color'] = "#66ccff"
+        }
+      }
+    },
+
+    // NOTE 松开时
+    released(event) {},
+
+    // NOTE 计算轴坐标
+    /** 
+     * @param {Object} coord 当前轴轴坐标，以window为0
+     * @param {Number} size 当前轴矩形的尺寸
+     * @param {Number} space 矩形之间间距
+     * @param {Number} margin 当前轴距离window的间距
+    */
+
+    // space是块之间间隔，margin是距window的距离
+    getAxisCoord(coord, size, space, margin) {
+
+      const cur = coord - margin
+      const minInter = (cur / (size + space)) + 1
+      const maxInter = (cur + space) / (size + space)
+
+      let condition = Math.floor(minInter) == Math.ceil(maxInter)
+      return condition ? Math.floor(minInter) : -1
+    },
+  }
+})
+</script>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  .item { width: 24px; height: 24px; margin: 6px 3px; background-color: #6c6; font-size: 11px; }
+</style>
+
+</html>
