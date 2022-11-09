@@ -1,3 +1,5 @@
+// 用于获取皇帝庙号 百度百科的一个脚本
+
 let keys = ['id', 'miao', 'shi', 'emperorName', 'hao',  'ascend', 'relation', 'mausoleum']
 
 function getData(keys, isDown, filename) {

@@ -1,3 +1,7 @@
+/**
+ * 用于获取Excel记账表的数据
+ */
+
 const Excel = require("exceljs")
 const path = require('path')
 
@@ -5,7 +9,8 @@ let account = path.join(__dirname, 'acc.xlsx')
 
 // console.log('acc', account)
 
-// 获取id
+// 获取id数组
+// acc._worksheets
 
 // console.log('accccc', acc._worksheets.length)
 // console.log('bccccc', acc._worksheets[5].id)
@@ -81,11 +86,7 @@ async function test() {
     }
   
     bbb.push(curCol)
-
   }
-
-  // console.log('bbb', bbb, '\n', JSON.stringify(bbb))
-
   let fin = []
 
   // 上面的bills会concat 3遍expenses  所以需要去掉不需要的数据
