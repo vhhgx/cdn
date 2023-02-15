@@ -8,7 +8,7 @@
  */
 const Excel = require("exceljs");
 const path = require('path');
-const { Parse } = require('./Parse');
+const { Parse } = require('./ParseNum');
 
 // 读取原表
 const Read = new Excel.Workbook();
@@ -19,11 +19,11 @@ let ROWS = 44
 let Write = new Excel.Workbook();
 let sheet = Write.addWorksheet('new')
 
-function generator (initial, modified) {
+function generator (modified) {
 
   // 文件路径，传值
   // let originalFile = path.join(__dirname, '../public/uploads/', initial + '.xlsx')
-  let originalFile = path.join(__dirname, './', '1' + '.xlsx')
+  let originalFile = path.join(__dirname, './', '3' + '.xlsx')
 
   Read.xlsx.readFile(originalFile).then(() => {
     let original = Read.getWorksheet(1)
@@ -88,11 +88,11 @@ function generator (initial, modified) {
     sheet.addRows(fir)
 
     let doc = path.join(__dirname, './') + res[1] + '.xlsx'
-    console.log('res', res)
-    // Write.xlsx.writeFile(doc)
+    // console.log('res', res)
+    Write.xlsx.writeFile(doc)
   })
 }
 
 
-generator()
+generator('1129')
 // module.exports = { generator }

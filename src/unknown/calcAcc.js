@@ -5,7 +5,9 @@
 const Excel = require("exceljs")
 const path = require('path')
 
-let account = path.join(__dirname, 'acc.xlsx')
+let account = path.join(__dirname, 'aac.xlsx')
+
+
 
 // console.log('acc', account)
 
@@ -30,10 +32,24 @@ async function test() {
 
   let acc = await Read.xlsx.readFile(account)
 
+  // console.log('啵啵啵啵啵啵', acc)
 
-  let ws = acc.getWorksheet(5)
+  // for(let i = 0; i < acc._worksheets.length; i++) {
+  //   if (acc._worksheets[i]) {
+  //     console.log('每个表', acc._worksheets[i].id)
+  //   }
+  // }
 
-  let colCount = ws.getRow(19).values.splice(2, 29)
+
+  let ws = acc.getWorksheet(9)
+
+
+  // console.log('ws', ws.getRow(6).values)
+
+  let colCount = ws.getRow(8).values.splice(2, 29)
+
+  // console.log('colCount', colCount)
+  // console.log('啥来着忘了', ws.getRow(8).values)
 
 
   let bbb = []
@@ -46,6 +62,8 @@ async function test() {
     let val = ws.getColumn(w+2).values.splice(8)
 
     let arr = []
+
+    // console.log('key', key)
 
     // 当前行
     let curCol = []
