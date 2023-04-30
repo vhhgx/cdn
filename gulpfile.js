@@ -8,10 +8,24 @@ const rename = require("gulp-rename");
 
 // # 通用的CSS压缩
 
-gulp.task("css", () => {
+// gulp.task("css", () => {
+//   return gulp
+//     .src("src/css/**/*.css")
+//     .pipe(concat("eltos.css"))
+//     .pipe(
+//       autoprefixer({
+//         cascade: false,
+//       })
+//     )
+//     .pipe(cssnano())
+//     .pipe(rename({ suffix: ".min" }))
+//     .pipe(gulp.dest("dist/css"));
+// });
+
+gulp.task("fonts", () => {
   return gulp
-    .src("src/css/**/*.css")
-    .pipe(concat("eltos.css"))
+    .src("src/css/fonts/iconfont.css")
+    .pipe(concat("fonts.css"))
     .pipe(
       autoprefixer({
         cascade: false,
@@ -19,42 +33,22 @@ gulp.task("css", () => {
     )
     .pipe(cssnano())
     .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("dist/css"));
+    .pipe(gulp.dest("dist/fonts"));
 });
 
-gulp.task("layout", () => {
-  return gulp
-    .src("src/css/common/layout.css")
-    .pipe(concat("layout.css"))
-    .pipe(
-      autoprefixer({
-        cascade: false,
-      })
-    )
-    .pipe(cssnano())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("dist/css"));
-});
-
-gulp.task("default", gulp.parallel("css", "layout"));
-
-// 压缩js文件
-// gulp.task('jsCompress', function() {
-//  return gulp.src('js/1.js').pipe(uglify()).pipe(gulp.dest('dist/js'))
+// gulp.task("layout", () => {
+//   return gulp
+//     .src("src/css/common/layout.css")
+//     .pipe(concat("layout.css"))
+//     .pipe(
+//       autoprefixer({
+//         cascade: false,
+//       })
+//     )
+//     .pipe(cssnano())
+//     .pipe(rename({ suffix: ".min" }))
+//     .pipe(gulp.dest("dist/css"));
 // });
 
-// // 压缩css文件
-// gulp.task('cssCompress', function () {
-// 	return gulp.src('libraries/style/reset.css')
-//   // return gulp.src('libraries/style/flex.css')
-//     .pipe(cleanCSS())
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(gulp.dest('libraries/dist/css'))
-// });
-
-// gulp.task('cssCompress', function () {
-//   return gulp.src('css/*.css')
-//     .pipe(cleanCSS())
-//     .pipe(concat('main.min.css'))
-//     .pipe(gulp.dest('css/dist'))
-// });
+// gulp.task("default", gulp.parallel("css", "layout"));
+gulp.task("default", gulp.parallel("fonts"));
