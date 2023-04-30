@@ -1,0 +1,98 @@
+/* # Flex 弹性盒子布局 */
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.flex-6 {
+  flex: 6;
+}
+
+/* ## 主轴排列 */
+.main-start {
+  justify-content: flex-start;
+}
+
+.main-end {
+  justify-content: flex-end;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.main-between {
+  justify-content: space-between;
+}
+
+.main-around {
+  justify-content: space-around;
+}
+
+/* ## 交叉轴排列 */
+.cross-start {
+  align-items: flex-start;
+}
+
+.cross-end {
+  align-items: flex-end;
+}
+
+.cross-center {
+  align-items: center;
+}
+
+.cross-baseline {
+  align-items: baseline;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ## 主轴方向 */
+.r-reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.c-reverse {
+  flex-direction: column-reverse;
+}
+
+/* ## 换行方式 */
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Grid布局 */
+.grid {
+  display: grid;
+}
