@@ -1,0 +1,32 @@
+name: Gulp Build and Commit
+
+on:
+  push:
+    branches:
+      - main # 或者你的主分支名称
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Gulp Task
+        run: gulp compress-css
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "gulp@vhhg.me"
+          git config --local user.name "actions"
+          git add dist/styles/flex.min.css
+          git commit -m "Actions 执行Gulp并自动提交" || exit 0  # 防止无更改时提交失败
+          git push
