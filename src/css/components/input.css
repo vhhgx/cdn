@@ -1,0 +1,25 @@
+/* WebKit浏览器 */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #C0C0C0;
+  font-size: 14px;
+}
+
+/* 火狐浏览器 4-18 */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  opacity: 1;
+}
+
+/* 火狐浏览器 19+ */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+/* IE浏览器 10+ */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #C0C0C0;
+  font-size: 14px;
+}
