@@ -35,14 +35,17 @@ const rename = require('gulp-rename')
 //  return gulp.src('js/1.js').pipe(uglify()).pipe(gulp.dest('dist/js'))
 // });
 
-// 压缩css文件
-gulp.task('cssCompress', function () {
-	return gulp.src('libraries/style/reset.css')
-  // return gulp.src('libraries/style/flex.css')
-    .pipe(cleanCSS())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('libraries/dist/css'))
-});
+gulp.task('compress-css', () => {
+  return gulp
+    .src('src/styles/flex.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(
+      rename({
+        suffix: '.min',
+      })
+    )
+    .pipe(gulp.dest('dist/styles'))
+})
 
 // gulp.task('cssCompress', function () {
 //   return gulp.src('css/*.css')
