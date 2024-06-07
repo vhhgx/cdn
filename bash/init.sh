@@ -14,14 +14,14 @@ echoTitle() {
 
 setupSSHKey() {
 	if [ -e ${HOME}/.ssh/id_rsa.pub ]; then
-		echoTip "* ssh-key已存在"
+		echoTip "\n* ssh-key已存在\n"
   	cat ${HOME}/.ssh/id_rsa.pub
 	else
-		echoTip "* 创建密钥，请输入git用户名和邮箱\n"
+		echoTip "\n* 创建密钥，请输入git用户名和邮箱\n"
 	  read -p" 👨 用户名: " username && read -p" 📮 邮箱: " email
-		echoTip "* 即将创建密钥，请根据提示进行操作"
+		echoTip "\n* 即将创建密钥，请根据提示进行操作\n"
 		git config --global user.name "$username" && git config --global user.email "$email" && ssh-keygen -t rsa -C "$email"
-		echoTitle "* ssh-key创建完成\n"
+		echoTip "\n* ssh-key创建完成\n"
 		cat ${HOME}/.ssh/id_rsa.pub
 	fi
 }
@@ -101,9 +101,9 @@ deb-src $mirror $(lsb_release -cs)-backports main restricted universe multiverse
 EOF
 
   # 更新软件包列表
-  echoTip "* 更新软件包列表\n\n"
+  echoTip "\n* 更新软件包列表\n\n"
   apt-get update
-  echoTip "软件源已经更新为 $mirror 源，并且软件包列表已更新"
+  echoTip "\n软件源已经更新为 $mirror 源，并且软件包列表已更新\n"
 }
 
 # 欢迎信息和使用方法
@@ -126,35 +126,35 @@ welcomeMessage() {
 
 # 安装 NVM 并使用 NVM 安装 Node.js
 installNodeViaNvm() {
-  echoTip "* 安装nvm，如遇到网络问题请重新执行命令"
+  echoTip "\n* 安装nvm，如遇到网络问题请重新执行命令\n"
   if ! command -v nvm &> /dev/null; then
-    wget -qO- https://cdn.jsdelivr.net/gh/nvm-sh/nvm@v0.39.7/install.sh | bash
+    wget -qO- https://fastly.jsdelivr.net/gh/vhhgx/dists/bash/nvm_0.39.7.sh | bash
     # 将 NVM 初始化脚本添加到 bash 配置文件中，确保永久性安装
     export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
     source ~/.bashrc
   fi
 
-  echoTip "* 使用nvm安装最新版本 Node.js LTS"
+  echoTip "\n* 使用nvm安装最新版本 Node.js LTS\n"
   nvm install --lts
   nvm use --lts
   nvm alias default 'lts/*'
-  echoTip "* Node.js $(node -v) 已安装"
+  echoTip "\n* Node.js $(node -v) 已安装\n"
 
   configureNpmTaobao
 }
 
 # 配置 NPM 使用淘宝镜像
 configureNpmTaobao() {
-  echoTip "* 配置 NPM 使用淘宝镜像"
+  echoTip "\n* 配置 NPM 使用淘宝镜像\n"
   npm install -g nrm
   nrm use taobao
-  echoTip "* 当前 NPM 镜像: $(nrm current)"
+  echoTip "\n* 当前 NPM 镜像: $(nrm current)\n"
 }
 
 # 安装 Nginx
 installNginx() {
-  echoTip "* 安装 Nginx"
+  echoTip "\n* 安装 Nginx"
   add-apt-repository -y ppa:nginx/stable
   apt-get update
   apt-get install -y nginx
@@ -162,15 +162,25 @@ installNginx() {
 
 # 安装 ZSH
 installZsh() {
-  echoTip "* 安装 ZSH"
+  echoTip "\n* 安装 ZSH\n"
   sudo apt-get install -y zsh
   chsh -s /bin/zsh
 }
 
 # 安装 Oh My Zsh
 installOhMyZsh() {
-  echoTip "* 安装 Oh My Zsh"
-  wget -qO- https://cdn.jsdelivr.net/gh/vhhgx/dists/bash/omz_gitee.sh | bash
+  echoTip "\n* 安装 Oh My Zsh\n"
+  wget -qO- https://fastly.jsdelivr.net/gh/vhhgx/dists/bash/omz_gitee.sh | bash
+  zsh
+  cd $HOME/.oh-my-zsh
+  git remote set-url origin https://gitee.com/mirrors/oh-my-zsh.git
+  cd ~
+
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  source ~/.zshrc
+
+  echoTip "\n* Oh My Zsh安装完成\n"
 }
 
 # 显示帮助信息并获取用户选择
@@ -205,13 +215,14 @@ installAll() {
     elif [[ -f /etc/debian_version ]]; then
       # welcomeMessage
       selectMirror
-      echoTip "* 安装系统必备包"
+      echoTip "\n* 安装系统必备包\n"
       apt install -y software-properties-common curl wget git net-tools openssh-server
       setupSSHKey
       installNodeViaNvm
       installNginx
       installZsh
       installOhMyZsh
+      echoTip "\n* 执行结束，所有安装已完成\n"
     else
       unsupportedSystem
     fi
