@@ -121,7 +121,7 @@ welcomeMessage() {
 
   echo -e "\n\033[33m扩展内容\033[0m\n"
   echo -e "\033[33m6.\033[0m docker     安装 Docker"
-  echo -e "\033[33m7.\033[0m docker     更换镜像源\n"
+  echo -e "\033[33m7.\033[0m mirror     更换镜像源\n"
 }
 
 # 安装 NVM 并使用 NVM 安装 Node.js
@@ -129,10 +129,6 @@ installNodeViaNvm() {
   echoTip "\n* 安装nvm，如遇到网络问题请重新执行命令\n"
   if ! command -v nvm &> /dev/null; then
     wget -qO- https://fastly.jsdelivr.net/gh/vhhgx/dists/bash/nvm_0.39.7.sh | bash
-    # 将 NVM 初始化脚本添加到 bash 配置文件中，确保永久性安装
-    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    source ~/.bashrc
   fi
 
   echoTip "\n* 使用nvm安装最新版本 Node.js LTS\n"
@@ -176,6 +172,7 @@ installOhMyZsh() {
   git remote set-url origin https://gitee.com/mirrors/oh-my-zsh.git
   cd ~
 
+  # 将 NVM 初始化脚本添加到 bash 配置文件中，确保永久性安装
   export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   source ~/.zshrc
@@ -236,7 +233,7 @@ installAll() {
 # ----------------------------------------------- 脚本开始 -----------------------------------------------
 
 if [[ -z "$1" ]]; then
-    showHelpAndReadInput
+  showHelpAndReadInput
 else
   case $1 in
     key)
