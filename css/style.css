@@ -1,0 +1,349 @@
+
+.example {
+  display: flex;
+  transform: translateX(10px);
+}
+
+:root {
+  --vh-color-green-50: #71dd8a;
+  --vh-color-green-100: #5dd879;
+  --vh-color-green-200: #48d368;
+  --vh-color-green-300: #34ce57;
+  --vh-color-green-400: #2dbc4e;
+  --vh-color-green-500: #28a745;
+  --vh-color-green-600: #23923d;
+  --vh-color-green-700: #1e7e34;
+  --vh-color-green-800: #19692c;
+  --vh-color-green-900: #145523;
+  --vh-color-green-950: #0f401b;
+  --vh-color-red-50: #efa2a9;
+  --vh-color-red-100: #eb8c95;
+  --vh-color-red-200: #e77681;
+  --vh-color-red-300: #e4606d;
+  --vh-color-red-400: #e04b59;
+  --vh-color-red-500: #dc3545;
+  --vh-color-red-600: #d32535;
+  --vh-color-red-700: #bd2130;
+  --vh-color-red-800: #a71d2a;
+  --vh-color-red-900: #921925;
+  --vh-color-red-950: #7c151f;
+  --vh-color-blue-50: #80bdff;
+  --vh-color-blue-100: #66b0ff;
+  --vh-color-blue-200: #4da3ff;
+  --vh-color-blue-300: #3395ff;
+  --vh-color-blue-400: #1a88ff;
+  --vh-color-blue-500: #007bff;
+  --vh-color-blue-600: #006fe6;
+  --vh-color-blue-700: #0062cc;
+  --vh-color-blue-800: #0056b3;
+  --vh-color-blue-900: #004a99;
+  --vh-color-blue-950: #003e80;
+}
+
+/* WebKit浏览器 */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #C0C0C0;
+  font-size: 14px;
+}
+
+/* 火狐浏览器 4-18 */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  opacity: 1;
+}
+
+/* 火狐浏览器 19+ */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+/* IE浏览器 10+ */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #C0C0C0;
+  font-size: 14px;
+}
+
+/* # Flex 弹性盒子布局 */
+.flex {
+  display: flex;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.f3 {
+  flex: 3;
+}
+
+.f4 {
+  flex: 4;
+}
+
+.f5 {
+  flex: 5;
+}
+
+.f6 {
+  flex: 6;
+}
+
+/* ## 主轴排列 */
+.main-start {
+  justify-content: flex-start;
+}
+
+.main-end {
+  justify-content: flex-end;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.main-between {
+  justify-content: space-between;
+}
+
+.main-around {
+  justify-content: space-around;
+}
+
+/* ## 交叉轴排列 */
+.cross-start {
+  align-items: flex-start;
+}
+
+.cross-end {
+  align-items: flex-end;
+}
+
+.cross-center {
+  align-items: center;
+}
+
+.cross-baseline {
+  align-items: baseline;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ## 主轴方向 */
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* ## 换行方式 */
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Grid布局 */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.flex-6 {
+  flex: 6;
+}
+
+/* ## 主轴排列 */
+.main-start {
+  justify-content: flex-start;
+}
+
+.main-end {
+  justify-content: flex-end;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.main-between {
+  justify-content: space-between;
+}
+
+.main-around {
+  justify-content: space-around;
+}
+
+/* ## 交叉轴排列 */
+.cross-start {
+  align-items: flex-start;
+}
+
+.cross-end {
+  align-items: flex-end;
+}
+
+.cross-center {
+  align-items: center;
+}
+
+.cross-baseline {
+  align-items: baseline;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ## 主轴方向 */
+.r-reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.c-reverse {
+  flex-direction: column-reverse;
+}
+
+/* ## 换行方式 */
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-size-adjust: none;
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+
+
+/*包含以下五种的链接*/
+a {
+  text-decoration: none;
+}
+
+/*正常的未被访问过的链接*/
+a:link {
+  text-decoration: none;
+}
+
+/*已经访问过的链接*/
+a:visited {
+  text-decoration: none;
+}
+
+/*鼠标划过(停留)的链接*/
+a:hover {
+  text-decoration: none;
+}
+
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+  text-decoration: none;
+}
+
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+  text-decoration: none;
+}
