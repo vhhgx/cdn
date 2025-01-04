@@ -294,8 +294,7 @@ td {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-size-adjust: none;
+  font-size: 14px;
 }
 
 fieldset,
@@ -314,6 +313,11 @@ ol,
 ul {
   list-style: none;
   text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 
